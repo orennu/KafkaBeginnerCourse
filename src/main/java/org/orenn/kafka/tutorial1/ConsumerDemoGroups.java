@@ -47,20 +47,9 @@ public class ConsumerDemoGroups {
         // create consumer
         KafkaConsumer<String, String> kafkaConsumer = new KafkaConsumer<>(properties);
 
-        // subscribe consumer to topic(s)
-        /*
-        subscribe to single topic
-        kafkaConsumer.subscribe(Collections.singleton(topic));
-         */
-
-        // subscribe to multiple topics using Array
-        /*kafkaConsumer.subscribe(Arrays.asList("first_topic", "second_topic"));*/
-
         // subscribe to multiple topics using List
         List<String> topicList = new ArrayList<>();
         topicList.add(topic);
-        topicList.add("second_topic");
-        topicList.add("third_topic");
 
         kafkaConsumer.subscribe(topicList);
 
